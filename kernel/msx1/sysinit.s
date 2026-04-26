@@ -11,5 +11,6 @@ sysinit:
     ld [sysvar_disk_1_slot], a
 
     call vdp_init
+    call keyb_init
     
     ret

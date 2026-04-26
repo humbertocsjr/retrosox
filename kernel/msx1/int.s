@@ -14,6 +14,7 @@ int_handler:
     push de
 
     call vdp_int_handler
+    call keyb_int_handler
 
 
     call proc_save_state

@@ -20,6 +20,7 @@ section text
 
 global vdp_init
 vdp_init:
+    ; inicia o processo de gerenciamento do vdp
     ld hl, vdp_main
     ld de, vdp_stack_top
     call proc_new
