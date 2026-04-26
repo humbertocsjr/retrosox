@@ -2,21 +2,33 @@
 
 Sistema operacional para Computadores Z80 inspirado na implementação brasileira do Unix chamada SOX.
 
-## Estado do Projeto
+**Projeto no inicio de desenvolvimento**
 
-- Boot Loader [Feito]
-- Sistema de Arquivos [Feito]
-- Criado estrutura basica do projeto [Feito]
-- Criado estrutura de controladores de dispositivos [Em Planejamento]
-- Criado estrutura de multitarefa [Em Planejamento]
-- Criado controlador de expansão de memoria MegaRAM [Em Planejamento]
-- Criado controlador de Video [Em Planejamento]
-- Criado controlador de Disco Microsol/DDX [Em Planejamento]
+## Objetivos atuais
 
-## Objetivos do Projeto
+- Implementer Write no dispositivo de Video
+- Implementar minimo do IPC suficiente para enviar Write pro dispositivo de video pra imprimir na tela
+
+## Objetivos do Projeto de Longo Prazo
 
 - Onde for possível implementar conforme a documentação do SOX para manter um certo nível de compatibilidade
 - Implantar pelo menos o nivel de API do UNIX v4
+- Suportar Sistema de Arquivos do Minix pelo menos como somente leitura para um disco secundário
+
+## Estado do Projeto
+
+- Boot Loader [**Feito**]
+- Sistema de Arquivos [**Feito**]
+- Estrutura basica do projeto [**Feito**]
+- Estrutura de controladores de dispositivos [**Em Planejamento**]
+- Estrutura de multitarefa [**Em Desenvolvimento**]
+- Controlador de expansão de memoria MegaRAM [**Em Planejamento**]
+- Controlador de Video [**Em Desenvolvimento**]
+- Controlador de Disco Microsol/DDX [**Em Planejamento**]
+- Comunicação entre processos (Inspirado no MINIX) [**Em Planejamento**]
+- Syscall Fork [**Em Planejamento**]
+- Syscall Write [**Em Planejamento**]
+- Syscall Read [**Em Planejamento**]
 
 # Computadores Suportados
 
