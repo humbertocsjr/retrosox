@@ -39,7 +39,7 @@ Testado em um Sharp Hotbit com MegaRAM e uma unidade de disquete DDX 3.0.
 
 Ferramentas Externas Necessárias:
 
-- [HC SDK para Retro Computação](https://github.com/humbertocsjr/hcsdkretro) (Requer versão v1.9R15 ou superior)
+- [HC SDK para Retro Computação](https://github.com/humbertocsjr/hcsdkretro) (Requer versão v1.9R17 ou superior)
 
 Ferramentas embutidas:
 
