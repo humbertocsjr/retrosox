@@ -16,9 +16,11 @@ _start:
 
     ; inicializa memoria BSS
     ld a, 0
-    ld bc, __bss_size__
-    ld de, __bss_start__
-    call mem_fill_byte
+    ld bc, __bss_size__ - 1
+    ld de, __bss_start__ + 1
+    ld hl, __bss_start__
+    ld [hl], a
+    ldir
 
     ; inicializa processos
     call proc_init

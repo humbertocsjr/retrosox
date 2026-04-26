@@ -26,7 +26,6 @@ mem_fill_byte:
     ; decrementa contador pois ja gravou o primeiro
     dec bc
     ; verifica se o contador eh zero
-    ld l, a
     ld a, b
     or c
     ; se for encerra

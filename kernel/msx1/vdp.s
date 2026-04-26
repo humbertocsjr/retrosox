@@ -1,10 +1,10 @@
 
 obj_video: equ 963
-    .buffer: equ 0
+    .x: equ 0
+    .y: equ 1
+    .changed: equ 2
+    .buffer: equ 3
     .buffer__size: equ 960
-    .x: equ 960
-    .y: equ 961
-    .changed: equ 962
 
 section bss
 
@@ -63,6 +63,37 @@ vdp_int_handler:
     ld a, [vdp_int_enabled]
     cp 0
     ret z
+
+    ; encerra se o buffer atual nao foi alterado
+    ld ix, [sysvar_vdp_current]
+    ld a, [ix+obj_video.changed]
+    cp 0
+    ret z
+
+    ; redefine marcador de buffer alterado
+    ld [ix+obj_video.changed], 0
+
+    ; copia buffer para vram
+    ld a, 0
+    out [0x99], a
+    ld a, 0x40
+    out [0x99], a
+
+    ; define parametros para copia
+    ld hl, [sysvar_vdp_current]
+    ld de, obj_video.buffer
+    add hl, de
+    ld bc, obj_video.buffer__size
+    ld a, b
+    inc a
+    ld b, c
+    ld c, 0x98
+    .loop:
+        ; copia buffer
+        outi
+        jr nz, .loop
+        dec a
+        jr nz, .loop
 
     ret
 
