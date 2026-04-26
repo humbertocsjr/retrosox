@@ -1,0 +1,14 @@
+*.kern
+*.boot
+*.bin
+*.app
+*.font
+*.img
+*.sym
+*.lib
+*.o
+*.obj
+*.img.info
+.DS_Store
+/sdk/rfs*
+/sdk/mkrfs

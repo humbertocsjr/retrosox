@@ -1,0 +1,1 @@
+COMMON_SRC = main.s vars.s mem.s proc.s
