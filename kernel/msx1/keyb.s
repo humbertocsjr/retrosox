@@ -21,26 +21,30 @@ keyb_list__max: equ 16
 
 section bss
 
-keyb_stack_base: resb 200
-keyb_stack_top:
-keyb_list: resb keyb_list__max * obj_keyb
+    keyb_stack_base: resb 200
+    keyb_stack_top:
+    keyb_list: resb keyb_list__max * obj_keyb
 
 section text
 
-global keyb_init
-keyb_init:
-    ; inicia o processo de gerenciamento do teclado
-    ld hl, keyb_main
-    ld de, keyb_stack_top
-    call proc_new
-    ret
+    global keyb_init
+    keyb_init:
+        ; inicia o processo de gerenciamento do teclado
+        ld hl, keyb_main
+        ld de, keyb_stack_top
+        call proc_new
+        
+        ; define dispositivo
+        ld b, dev_id_keyb
+        call dev_set_process
+        ret
 
-keyb_main:
-    .event_loop:
-    halt
-    jp .event_loop
+    keyb_main:
+        .event_loop:
+        halt
+        jp .event_loop
 
 
-global keyb_int_handler
-keyb_int_handler:
-    ret
+    global keyb_int_handler
+    keyb_int_handler:
+        ret

@@ -32,7 +32,8 @@ Sistema operacional para Computadores Z80 inspirado na implementação brasileir
 
 # Computadores Suportados
 
-- MSX 1 com 64 KiB de RAM
+- msx1_microsol_720.img: MSX 1
+    - Requer 64 KiB de RAM
     - Requer Drive de Disquete DDX 3.0 ou Microsol
     - Requer MegaRAM
 
@@ -51,7 +52,7 @@ Testado em um Sharp Hotbit com MegaRAM e uma unidade de disquete DDX 3.0.
 
 Ferramentas Externas Necessárias:
 
-- [HC SDK para Retro Computação](https://github.com/humbertocsjr/hcsdkretro) (Requer versão v1.9R17 ou superior)
+- [HC SDK para Retro Computação](https://github.com/humbertocsjr/hcsdkretro) (Requer versão v2.0R3 ou superior)
 
 Ferramentas embutidas:
 

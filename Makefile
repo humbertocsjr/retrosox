@@ -22,7 +22,7 @@ config.mk: Makefile
 	@echo ".SILENT:" >> config.mk
 
 run: all
-	@openmsx -machine Sharp_HB-8000_1.2 -ext DDX_3.0 -diska distro/msx1_720.img
+	@openmsx -machine Sharp_HB-8000_1.2 -ext DDX_3.0 -diska distro/msx1_microsol_720.img
 
 install: all
 	@install -m 755 sdk/mkrfs /usr/local/bin/mkrfs

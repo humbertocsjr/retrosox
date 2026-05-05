@@ -4,7 +4,7 @@ OBJ = $(SRC:.s=.obj)
 all: $(OUT)
 
 clean:
-	@rm -f $(OUT) $(OBJ) $(OUT:=.sym) | true
+	@rm -f $(OUT) $(OBJ) $(OUT:=.sym) *.obj *.lib *.sym | true
 
 %.obj: %.s Makefile $(PRJ_PATH)/common.mk
 	@echo "ASM...: $(patsubst $(PRJ_PATH)%,%,$(abspath $(shell pwd)/$(@)))"

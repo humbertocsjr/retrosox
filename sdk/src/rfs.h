@@ -27,6 +27,8 @@ typedef enum rfs_modes
     RFS_MODE_FILE = 01000, // Regular file
     RFS_MODE_DIRECTORY = 02000, // Directory
     RFS_MODE_SYMLINK = 04000,    // Symbolic Link
+    RFS_MODE_CHAR_DEV  = 010000,  // Character Device
+    RFS_MODE_BLOCK_DEV = 020000,  // Block Device
     RFS_MODE_OTHER_READ = 00001, // Read permission
     RFS_MODE_OTHER_WRITE = 00002, // Write permission
     RFS_MODE_OTHER_EXECUTE = 00004, // Execute permission
