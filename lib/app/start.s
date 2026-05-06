@@ -21,7 +21,7 @@ section text
         push ix
 
         ; chama funcao principal
-        call _main
+        call main
 
         ret
 

@@ -1,5 +1,5 @@
 OUT = ../sh.app
-SRC = main.s
+SRC = main.b
 LIB = 
 
 include ../../config.mk

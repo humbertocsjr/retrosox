@@ -1,3 +1,3 @@
-global _main
-_main:
+global main
+main:
     ret

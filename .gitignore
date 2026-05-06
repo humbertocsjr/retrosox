@@ -8,6 +8,7 @@
 *.lib
 *.o
 *.obj
+*.__s
 *.img.info
 .DS_Store
 /sdk/rfs*

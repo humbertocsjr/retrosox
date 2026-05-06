@@ -36,25 +36,4 @@ section text
         ld [hl], a
         ldir
 
-        ; inicializa processos
-        call proc_init
-
-        ; inicializa comunicacao inter processos
-        call ipc_init
-
-        ; inicializa gerenciador de dispositivos
-        call dev_init
-
-        ; inicializa sistema de arquivos
-        call fs_init
-
-        ; inicializa codigo da maquina 
-        call sysinit
-
-        ; ativa interrupcoes
-        ei
-
-        .idle:
-            ei
-            halt
-            jp .idle
+        jp main

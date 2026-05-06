@@ -1,10 +1,19 @@
-
-OBJ = $(SRC:.s=.obj)
+SRC_S = $(filter %.s,$(SRC))
+SRC_B = $(filter %.b,$(SRC))
+OBJ = $(SRC_S:.s=.obj) $(SRC_B:.b=.obj)
 
 all: $(OUT)
 
 clean:
-	@rm -f $(OUT) $(OBJ) $(OUT:=.sym) *.obj *.lib *.sym | true
+	@rm -f $(OUT) $(OBJ) $(OUT:=.sym) $(SRC_B:.b=.__s) | true
+
+%.__s: %.b Makefile $(PRJ_PATH)/common.mk
+	@echo "B.....: $(patsubst $(PRJ_PATH)%,%,$(abspath $(shell pwd)/$(@)))"
+	@hcbcomp-z80 -o $@ $<
+
+%.obj: %.__s Makefile $(PRJ_PATH)/common.mk
+	@echo "ASM...: $(patsubst $(PRJ_PATH)%,%,$(abspath $(shell pwd)/$(@)))"
+	@hcasm-z80 -o $@ $<
 
 %.obj: %.s Makefile $(PRJ_PATH)/common.mk
 	@echo "ASM...: $(patsubst $(PRJ_PATH)%,%,$(abspath $(shell pwd)/$(@)))"
